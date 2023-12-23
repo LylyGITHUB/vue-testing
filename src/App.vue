@@ -1,18 +1,18 @@
 <script setup>
-import { useRoute } from 'vue-router';
-import DefaultApp from '@/partials/DefaultApp.vue';
-import CleanLayout from '@/partials/CleanLayout.vue';
-import { computed } from 'vue';
 
-const router = useRoute()
+import CleanLayout from './layout/CleanLayout.vue';
+import DefaultApp from './layout/DefaultApp.vue';
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 </script>
 
 <template>
-  <div v-if="!router.meta.cleanLayout">
+  <div v-if="!router.currentRoute.value.meta.cleanLayout">
     <default-app></default-app>
   </div>
-  <div v-if="router.meta.cleanLayout === true">
+  <div v-else>
     <clean-layout></clean-layout>
   </div>
 </template>

@@ -1,8 +1,13 @@
 import { createApp } from 'vue';
-import {router} from '@/route';
 import App from './App.vue';
+import { router } from './router';
 
-// 5. Create and mount the root instance.
+import './style.css';
+import '/node_modules/primeflex/primeflex.css';
+import 'primeflex/themes/primeone-light.css';
+
 const app = createApp(App)
+
 app.use(router)
+
 app.mount('#app')
